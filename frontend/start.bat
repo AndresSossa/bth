@@ -1,0 +1,1 @@
+ng build --prod --output-path "D:\Workspaces\DEFAULT-WEBAPP\backend\config\static\ang" --watch --output-hashing none
