@@ -6,6 +6,10 @@ import { BlankComponent } from './pages/blank/blank.component';
 import { SearchComponent } from './pages/search/search.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { ErrorComponent } from './pages/errors/error/error.component';
+import { CargoComponent } from './pages/cargo/cargo.component';
+import { FormComponent } from './pages/cargo/form/form.component';
+import { EpsComponent } from './pages/eps/eps.component'
+import { FormComponentEps } from './pages/eps/form/form.component'
 
 export const routes: Routes = [
     { path: '', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
@@ -13,6 +17,12 @@ export const routes: Routes = [
         path: '', 
         component: PagesComponent, children: [
             { path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule), data: { breadcrumb: 'Dashboard' } },
+            { path: 'cargo',component: CargoComponent, data:{breadcrumb: 'Maestro Cargo'}},
+            { path: 'cargo/cargo/reg',component: FormComponent, data:{breadcrumb: 'Registrar Cargo'}},
+            { path: 'cargo/cargo/upd/:id',component: FormComponent, data:{breadcrumb: 'Actualizar Cargo'}},
+            { path: 'eps',component:EpsComponent, data:{breadcrumb: 'Maestro EPS'}},
+            { path: 'eps/eps/reg',component: FormComponentEps, data:{breadcrumb: 'Registrar EPS'} },
+            { path: 'eps/eps/upd/:id',component:FormComponentEps, data:{breadcrumb: 'Actualizar EPS'} }
         ]
     },
     { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) },

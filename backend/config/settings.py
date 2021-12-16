@@ -11,11 +11,14 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import dj_database_url
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_STATIC = os.path.dirname(os.path.abspath(__file__))
 
+print("1",PROJECT_ROOT)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -51,7 +54,9 @@ INSTALLED_APPS = [
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'rest_framework'
+    'rest_framework',
+    'src.app.cargo',
+    'src.app.eps',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +84,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'debug': DEBUG,
+            'debug': True,
         },
     },
 ]
@@ -93,9 +98,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'solucion_digital_co_mysportpro',
+        'NAME': 'bth',
         'USER': 'root',
-        'PASSWORD': 'Rebeca.2020*',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306'
     }
@@ -139,7 +144,8 @@ ALLOWED_HOSTS = ['*']
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static/ang')
-STATIC_URL = '/'
+STATIC_URL = '/static/'
+
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
@@ -148,4 +154,6 @@ STATICFILES_DIRS = [
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage' 

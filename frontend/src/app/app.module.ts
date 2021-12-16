@@ -36,6 +36,12 @@ import { FullScreenComponent } from './theme/components/fullscreen/fullscreen.co
 import { ApplicationsComponent } from './theme/components/applications/applications.component';
 import { MessagesComponent } from './theme/components/messages/messages.component';
 import { UserMenuComponent } from './theme/components/user-menu/user-menu.component';
+import { CargoComponent } from './pages/cargo/cargo.component';
+import { FormComponent } from './pages/cargo/form/form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { EpsComponent } from './pages/eps/eps.component'
+import { FormComponentEps } from './pages/eps/form/form.component'
 
 @NgModule({
   imports: [
@@ -53,7 +59,9 @@ import { UserMenuComponent } from './theme/components/user-menu/user-menu.compon
     }),
     SharedModule,
     PipesModule,
-    routing
+    routing,
+    HttpClientModule,
+    HttpModule,
   ],
   declarations: [
     AppComponent,
@@ -70,7 +78,11 @@ import { UserMenuComponent } from './theme/components/user-menu/user-menu.compon
     FullScreenComponent,
     ApplicationsComponent,
     MessagesComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    CargoComponent,
+    FormComponent,
+    EpsComponent,
+    FormComponentEps
   ],
   entryComponents:[
     VerticalMenuComponent
@@ -83,3 +95,6 @@ import { UserMenuComponent } from './theme/components/user-menu/user-menu.compon
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

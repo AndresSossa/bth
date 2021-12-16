@@ -16,9 +16,22 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic.base import TemplateView
+from src.app.cargo.views import *
+from src.app.eps.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^component/cargo/reg/',saveCargo),
+    url(r'^component/cargo/lookup/',lookupCargo),
+    url(r'^component/cargo/delete/',deleteCargo),
+    url(r'^component/cargo/update/(?P<id>\w+)',lookupCargoID),
+    
+    url(r'^component/eps/reg/',saveEps),
+    url(r'^component/eps/lookup/',lookupEps),
+    url(r'^component/eps/delete/',deleteEps),
+    url(r'^component/eps/update/(?P<id>\w+)',lookupEpsId),
+
+
     url(r'', TemplateView.as_view(template_name="home.html"), name="home")
 ]
 
