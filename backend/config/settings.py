@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'src.app.cargo',
     'src.app.eps',
+    'src.app.pension',
+    'src.app.cesantias'
 ]
 
 MIDDLEWARE = [

@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic.base import TemplateView
+from src.app.cesantias.views import *
 from src.app.cargo.views import *
 from src.app.eps.views import *
+from src.app.pension.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,6 +33,15 @@ urlpatterns = [
     url(r'^component/eps/delete/',deleteEps),
     url(r'^component/eps/update/(?P<id>\w+)',lookupEpsId),
 
+    url(r'^component/pension/reg',savePens),
+    url(r'^component/pension/update/(?P<id>\w+)',lookupEpsId),
+    url(r'^component/pension/lookup/',lookupPens),
+    url(r'^component/pension/delete/',deletePens),
+
+    url(r'^component/cesantias/reg/',saveCes),
+    url(r'^component/cesantias/update/(?P<id>\w+)',lookupCesId),
+    url(r'^component/cesantias/lookup/',lookupCes),
+    url(r'^component/cesantias/delete/',deleteCes),
 
     url(r'', TemplateView.as_view(template_name="home.html"), name="home")
 ]

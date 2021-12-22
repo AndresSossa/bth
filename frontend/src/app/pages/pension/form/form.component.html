@@ -1,0 +1,32 @@
+<div fxLayout="column">
+    <div class="flex-p">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>{{Tittle_maestro}} de Pension</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <form method="POST" [formGroup]="form" (ngSubmit)="onSubmit(form.value)" role="form" name="form">
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Escriba el Codigo" formControlName="cod_pens" name="cod_pens" id="cod_pens">
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Escriba el NIT" formControlName="nit_pens" name="nit_pens" id="nit_pens">
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Escriba la Razon social" formControlName="razon_pens" name="razon_pens" id="razon_pens">
+                    </mat-form-field>
+                    <br>
+
+
+                    <button mat-raised-button color="accent" type="button" (click)="cancelar()">Cancelar</button>
+                    <button mat-raised-button color="primary" type="submit" style="float: right; margin-right: 20px;">{{button_maestro}}</button> 
+                </form>
+
+                    
+            </mat-card-content>
+            <mat-card-content>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
