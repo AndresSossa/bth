@@ -1,0 +1,47 @@
+<div fxLayout="column">
+    <div class="flex-p">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Maestro Tipo de contrato</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Buscar por tipo de contrato" (keyup)="applyFilter($event.target.value)">
+                    </mat-form-field>
+                    <br>
+                    <a mat-raised-button color="primary" 
+                        [routerLink]="['tipo_contr/reg']"
+                        style="position: relative; left: 2%;width: 13%;height: 4%;">Crear</a>
+            </mat-card-content>
+            <mat-card-content>
+
+                <div fxLayout="column">
+                    <div class="flex-p"> 
+                        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">       
+                            <ng-container matColumnDef="tipo_contrato">
+                                <mat-header-cell *matHeaderCellDef> tipo contrato </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.tipo_contrato}} </mat-cell>
+                            </ng-container>      
+                            <ng-container matColumnDef="Opciones">
+                                <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> 
+                                <a mat-stroked-button color="accent" href="tipo_contr/tipo_contr/upd/{{element.id_tipo_contrato}}">
+                                    <mat-icon>edit</mat-icon>
+                                </a>
+                                
+                                <button mat-stroked-button color="warn" (click)="deleteTipoCont(element.id_tipo_contrato)">
+                                    <mat-icon>delete</mat-icon>
+                                </button> 
+                                </mat-cell>
+                            </ng-container>           
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                        </mat-table>
+                        <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+                    </div>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

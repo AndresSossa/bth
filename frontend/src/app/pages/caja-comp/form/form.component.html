@@ -1,0 +1,33 @@
+<div fxLayout="column">
+    <div class="flex-p">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>{{Tittle_maestro}} de Caja de compensación</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <form method="POST" [formGroup]="form" (ngSubmit)="onSubmit(form.value)" role="form" name="form">
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Escriba el Codigo" formControlName="cod_cajcomp" name="cod_cajcomp" id="cod_cajcomp">
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Escriba el NIT" formControlName="nit_cajcomp" name="nit_cajcomp" id="nit_cajcomp">
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Escriba la Razon social" formControlName="razon_cajcomp" name="razon_cajcomp" id="razon_cajcomp">
+                    </mat-form-field>                      
+                    <br>
+                    <br>
+
+
+                    <button mat-raised-button color="accent" type="button" (click)="cancelar()">Cancelar</button>
+                    <button mat-raised-button color="primary" type="submit" style="float: right; margin-right: 20px;">{{button_maestro}}</button> 
+                </form>
+
+                    
+            </mat-card-content>
+            <mat-card-content>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

@@ -8,8 +8,14 @@ import { NotFoundComponent } from './pages/errors/not-found/not-found.component'
 import { ErrorComponent } from './pages/errors/error/error.component';
 import { CargoComponent } from './pages/cargo/cargo.component';
 import { FormComponent } from './pages/cargo/form/form.component';
-import { EpsComponent } from './pages/eps/eps.component'
-import { FormComponentEps } from './pages/eps/form/form.component'
+import { EpsComponent } from './pages/eps/eps.component';
+import { FormComponentEps } from './pages/eps/form/form.component';
+import { CajaCompComponent } from './pages/caja-comp/caja-comp.component';
+import { FormComponentCajaComp } from './pages/caja-comp/form/form.component';
+import { TipoContratoComponent } from './pages/tipo-contrato/tipo-contrato.component';
+import { FormComponentTipoCon } from './pages/tipo-contrato/form/form.component';
+import { CentroCostoComponent } from './pages/centro-costo/centro-costo.component';
+import { FormComponentCentro } from './pages/centro-costo/form/form.component';
 
 export const routes: Routes = [
     { path: '', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
@@ -22,7 +28,16 @@ export const routes: Routes = [
             { path: 'cargo/cargo/upd/:id',component: FormComponent, data:{breadcrumb: 'Actualizar Cargo'}},
             { path: 'eps',component:EpsComponent, data:{breadcrumb: 'Maestro EPS'}},
             { path: 'eps/eps/reg',component: FormComponentEps, data:{breadcrumb: 'Registrar EPS'} },
-            { path: 'eps/eps/upd/:id',component:FormComponentEps, data:{breadcrumb: 'Actualizar EPS'} }
+            { path: 'eps/eps/upd/:id',component:FormComponentEps, data:{breadcrumb: 'Actualizar EPS'} },
+            { path: 'caja_comp', component: CajaCompComponent, data: {breadcrumb: 'Maestro caja de compensación'}},
+            { path: 'caja_comp/caja_comp/reg', component: FormComponentCajaComp, data:{breadcrumb: 'Registrar caja de compensación'}},
+            { path: 'caja_comp/caja_comp/upd/:id', component: FormComponentCajaComp, data:{breadcrumb: 'Actualizar cada de compensación'}},
+            { path: 'tipo_contr', component: TipoContratoComponent, data:{breadcrumb:'Maestro tipo de contrato'}},
+            { path: 'tipo_contr/tipo_contr/reg', component:FormComponentTipoCon, data:{breadcrumb:'Registrar tipo de contrato'}},
+            { path: 'tipo_contr/tipo_contr/upd/:id',component:FormComponentTipoCon, data:{breadcrumb:'Actualizar tipo de contrato'}},
+            { path: 'centro_costo', component:CentroCostoComponent,data:{breadcrumb:'Maestro centro de costo'}},
+            { path: 'centro_costo/centro_costo/reg',component:FormComponentCentro, data:{breadcrumb:'Registrar centro de costo'}},
+            { path: 'centro_costo/centro_costo/upd/:id',component: FormComponentCentro, data:{breadcrumb: 'Actualizar centro de costo'}},
         ]
     },
     { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) },

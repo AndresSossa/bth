@@ -3,9 +3,10 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import HttpResponse,JsonResponse
 from rest_framework import serializers
+from datetime import datetime,timezone
 from src.app.cargo.models import CargoModels
 from src.app.cargo.serializer import cargoModelSerializer
-from datetime import datetime,timezone
+
 
 
 # Create your views here.

@@ -41,7 +41,13 @@ import { FormComponent } from './pages/cargo/form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { EpsComponent } from './pages/eps/eps.component'
-import { FormComponentEps } from './pages/eps/form/form.component'
+import { FormComponentEps } from './pages/eps/form/form.component';
+import { CajaCompComponent } from './pages/caja-comp/caja-comp.component';
+import { FormComponentCajaComp } from './pages/caja-comp/form/form.component';
+import { TipoContratoComponent } from './pages/tipo-contrato/tipo-contrato.component';
+import { FormComponentTipoCon } from './pages/tipo-contrato/form/form.component';
+import { CentroCostoComponent } from './pages/centro-costo/centro-costo.component';
+import { FormComponentCentro } from './pages/centro-costo/form/form.component'
 
 @NgModule({
   imports: [
@@ -82,7 +88,13 @@ import { FormComponentEps } from './pages/eps/form/form.component'
     CargoComponent,
     FormComponent,
     EpsComponent,
-    FormComponentEps
+    FormComponentEps,
+    CajaCompComponent,
+    FormComponentCajaComp,
+    TipoContratoComponent,
+    FormComponentTipoCon,
+    CentroCostoComponent,
+    FormComponentCentro,
   ],
   entryComponents:[
     VerticalMenuComponent

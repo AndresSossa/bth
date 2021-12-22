@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'src.app.cargo',
     'src.app.eps',
+    'src.app.caja_comp',
+    'src.app.tipo_contrato',
+    'src.app.centro_costo'
 ]
 
 MIDDLEWARE = [
@@ -100,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bth',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306'
     }

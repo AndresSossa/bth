@@ -3,7 +3,10 @@ import { Menu } from './menu.model';
 export const verticalMenuItems = [ 
     new Menu (1, 'Dashboard', '/', null, 'dashboard', null, false, 0),
     new Menu (2, 'Cargo', '/cargo', null, 'supervisor_account', null, false, 0), 
-    new Menu (3, 'EPS', '/eps', null, 'supervisor_account', null, false, 0), 
+    new Menu (3, 'EPS', '/eps', null, 'supervisor_account', null, false, 0),
+    new Menu (4, 'Caja Compensacion','/caja_comp',null,'supervisor_account',null,false,0),
+    new Menu (6, 'Tipo contrato', '/tipo_contr',null,'supervisor_account',null,false,0), 
+    new Menu (7, 'Centro costo','/centro_costo',null,'supervisor_account',null,false,0),
     /*new Menu (3, 'UI Features', null, null, 'computer', null, true, 0),   
     new Menu (4, 'Buttons', '/ui/buttons', null, 'keyboard', null, false, 3),  
     new Menu (5, 'Cards', '/ui/cards', null, 'card_membership', null, false, 3), 
