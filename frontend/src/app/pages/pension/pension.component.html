@@ -1,0 +1,55 @@
+<div fxLayout="column">
+    <div class="flex-p">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Maestro de Pensiones</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Buscar por Pension" (keyup)="applyFilter($event.target.value)">
+                    </mat-form-field>
+                    <br>
+                    <a mat-raised-button color="primary" 
+                        [routerLink]="['pension/reg']"
+                        style="position: relative; left: 2%;width: 13%;height: 4%;">Crear</a>
+            </mat-card-content>
+            <mat-card-content>
+
+                <div fxLayout="column">
+                    <div class="flex-p"> 
+                        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">       
+                            <ng-container matColumnDef="codigo_pens">
+                                <mat-header-cell *matHeaderCellDef> Codigo </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.codigo_pens}} </mat-cell>
+                            </ng-container>
+                            <ng-container matColumnDef="nit">
+                                <mat-header-cell *matHeaderCellDef> Nit </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.nit_pens}} </mat-cell>
+                            </ng-container>  
+                            <ng-container matColumnDef="razon_social">
+                                <mat-header-cell *matHeaderCellDef> Razón social </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.razon_social}} </mat-cell>
+                            </ng-container>           
+                            <ng-container matColumnDef="Opciones">
+                                <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> 
+                                <a mat-stroked-button color="accent" href="pension/pension/upd/{{element.id_pens}}">
+                                    <mat-icon>edit</mat-icon>
+                                </a>
+                                
+                                <button mat-stroked-button color="warn" (click)="deletePens(element.id_pens)">
+                                    <mat-icon>delete</mat-icon>
+                                </button> 
+                                </mat-cell>
+                            </ng-container>           
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                        </mat-table>
+                        <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+                    </div>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

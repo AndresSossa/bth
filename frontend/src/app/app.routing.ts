@@ -17,6 +17,11 @@ import { FormComponentTipoCon } from './pages/tipo-contrato/form/form.component'
 import { CentroCostoComponent } from './pages/centro-costo/centro-costo.component';
 import { FormComponentCentro } from './pages/centro-costo/form/form.component';
 
+import { PensionComponent } from './pages/pension/pension.component';
+import { FormComponentPens } from './pages/pension/form/form.component';
+import { CesantiasComponent } from './pages/cesantias/cesantias.component';
+import {  FormComponentCes } from './pages/cesantias/form/form.component';
+ 
 export const routes: Routes = [
     { path: '', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
     { 
@@ -38,6 +43,12 @@ export const routes: Routes = [
             { path: 'centro_costo', component:CentroCostoComponent,data:{breadcrumb:'Maestro centro de costo'}},
             { path: 'centro_costo/centro_costo/reg',component:FormComponentCentro, data:{breadcrumb:'Registrar centro de costo'}},
             { path: 'centro_costo/centro_costo/upd/:id',component: FormComponentCentro, data:{breadcrumb: 'Actualizar centro de costo'}},
+            { path: 'pension' ,component: PensionComponent, data:{breadcrumb: 'Maestro Pensiones'}},
+            { path: 'pension/pension/reg',component: FormComponentPens, data:{breadcrumb: 'Registrar Pension'} },
+            { path: 'pension/pension/upd/:id',component:FormComponentPens, data:{breadcrumb: 'Actualizar Pension'} },
+            { path: 'cesantias', component: CesantiasComponent, data:{breadcrumb: 'Maestro Cesantias'} },
+            { path: 'cesantias/cesantias/reg',component: FormComponentCes, data:{breadcrumb: 'Registrar Cesantias'} },
+            { path: 'cesantias/cesantias/upd/:id',component:FormComponentCes, data:{breadcrumb: 'Actualizar Cesantias'} },
         ]
     },
     { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) },

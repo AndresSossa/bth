@@ -59,7 +59,9 @@ INSTALLED_APPS = [
     'src.app.eps',
     'src.app.caja_comp',
     'src.app.tipo_contrato',
-    'src.app.centro_costo'
+    'src.app.centro_costo',
+    'src.app.pension',
+    'src.app.cesantias',
 ]
 
 MIDDLEWARE = [

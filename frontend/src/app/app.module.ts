@@ -48,6 +48,10 @@ import { TipoContratoComponent } from './pages/tipo-contrato/tipo-contrato.compo
 import { FormComponentTipoCon } from './pages/tipo-contrato/form/form.component';
 import { CentroCostoComponent } from './pages/centro-costo/centro-costo.component';
 import { FormComponentCentro } from './pages/centro-costo/form/form.component'
+import { PensionComponent } from './pages/pension/pension.component'
+import { FormComponentPens } from './pages/pension/form/form.component';
+import { CesantiasComponent } from './pages/cesantias/cesantias.component';
+import { FormComponentCes } from './pages/cesantias/form/form.component'
 
 @NgModule({
   imports: [
@@ -95,6 +99,11 @@ import { FormComponentCentro } from './pages/centro-costo/form/form.component'
     FormComponentTipoCon,
     CentroCostoComponent,
     FormComponentCentro,
+    PensionComponent,
+    FormComponentPens,
+    CesantiasComponent,
+    FormComponentCes
+    
   ],
   entryComponents:[
     VerticalMenuComponent

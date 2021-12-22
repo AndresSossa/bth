@@ -16,11 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic.base import TemplateView
+from src.app.cesantias.views import *
 from src.app.cargo.views import *
 from src.app.eps.views import *
 from src.app.caja_comp.views import *
 from src.app.tipo_contrato.views import *
 from src.app.centro_costo.views import *
+from src.app.pension.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -38,6 +40,15 @@ urlpatterns = [
     url(r'^component/caja_comp/lookup/',lookupCajComp),
     url(r'^component/caja_comp/delete/',deleteCajComp),
     url(r'^component/caja_comp/update/(?P<id>\w+)',lookupIdCajComp),
+    url(r'^component/pension/reg',savePens),
+    url(r'^component/pension/update/(?P<id>\w+)',lookupEpsId),
+    url(r'^component/pension/lookup/',lookupPens),
+    url(r'^component/pension/delete/',deletePens),
+
+    url(r'^component/cesantias/reg/',saveCes),
+    url(r'^component/cesantias/update/(?P<id>\w+)',lookupCesId),
+    url(r'^component/cesantias/lookup/',lookupCes),
+    url(r'^component/cesantias/delete/',deleteCes),
 
     url(r'^component/tipo_contrato/reg/',saveTipoContrato),
     url(r'^component/tipo_contrato/update/(?P<id>\w+)',urlLookUpId),
